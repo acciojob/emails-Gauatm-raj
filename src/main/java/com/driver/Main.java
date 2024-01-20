@@ -16,6 +16,7 @@ public class Main {
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022"), "Tushar", "We are running out of time.");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022"), "Abhishek", "Assignment to be uploaded on database.");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("23/12/2022"), "Tushar", "Everything looks good.");
+        //System.out.println(gmail.findOldestMessage());
 
         System.out.println("Total " + gmail.getInboxSize() + " mails in inbox.");
         System.out.println("There are " + gmail.findMailsBetweenDates(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022")) + " mails between given dates!");
@@ -25,6 +26,7 @@ public class Main {
         System.out.println("There are " + gmail.getTrashSize() + " mails in the trash.");
         gmail.emptyTrash();
         System.out.println("There are " + gmail.getTrashSize() + " mails in the trash.");
+
 
         Workspace workspace = new Workspace("accio@gmail.com");
         System.out.println("Inbox capacity is " + workspace.getInboxCapacity() + " in workspace.");
