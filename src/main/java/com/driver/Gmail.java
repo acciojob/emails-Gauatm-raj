@@ -54,14 +54,15 @@ public class Gmail extends Email {
         for (mail mail1 : inbox) {
             if (mail1.getMessage().equals(message)) {
                 mailToDelete = mail1;
-                if (mailToDelete != null) {
-                    trash.add(mailToDelete);
-                    inbox.remove(mailToDelete);
-                }
+                break;
             }
         }
 
         // If the mail is found, move it to trash and remove it from the inbox
+        if (mailToDelete != null) {
+            trash.add(mailToDelete);
+            inbox.remove(mailToDelete);
+        }
 
 
     }
@@ -70,7 +71,7 @@ public class Gmail extends Email {
         // If the inbox is empty, return null
         // Else, return the message of the latest mail present in the inbox
         if(inbox.size()>0){
-            return inbox.get(0).getMessage();
+            return inbox.get(inbox.size() - 1).getMessage();
         }
        return null;
     }
@@ -79,7 +80,7 @@ public class Gmail extends Email {
         // If the inbox is empty, return null
         // Else, return the message of the oldest mail present in the inbox
         if(inbox.size()>0){
-            return inbox.get(inbox.size() - 1).getMessage();
+            return inbox.get(0).getMessage();
         }
        return null;
     }
