@@ -22,7 +22,7 @@ public class Workspace extends Gmail{
         //add the meeting to calendar
         calendar.add(meeting);
         // Sort meetings by start time
-        Collections.sort(calendar, Comparator.comparing(Meeting::getStartTime));
+        //Collections.sort(calendar, Comparator.comparing(Meeting::getStartTime));
 
     }
 
@@ -32,6 +32,7 @@ public class Workspace extends Gmail{
         // 2. If you want to attend a meeting, you must join it at its start time and leave at end time.
         // Example: If a meeting ends at 10:00 am, you cannot attend another meeting starting at 10:00 am
         int maxMeetings = 0;
+        Collections.sort(calendar, Comparator.comparing(Meeting::getEndTime));
         LocalTime currentTime = LocalTime.MIN;
 
         for (Meeting meeting : calendar) {

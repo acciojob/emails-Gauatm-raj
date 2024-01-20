@@ -18,4 +18,6 @@ public class Meeting {
     public LocalTime getEndTime() {
         return endTime;
     }
+
+
 }
