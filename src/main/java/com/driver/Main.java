@@ -16,7 +16,7 @@ public class Main {
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022"), "Tushar", "We are running out of time.");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022"), "Abhishek", "Assignment to be uploaded on database.");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("23/12/2022"), "Tushar", "Everything looks good.");
-        //System.out.println(gmail.findOldestMessage());
+        //System.out.println(gmail.getInboxCapacity());
 
         System.out.println("Total " + gmail.getInboxSize() + " mails in inbox.");
         System.out.println("There are " + gmail.findMailsBetweenDates(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022")) + " mails between given dates!");
@@ -31,10 +31,10 @@ public class Main {
         Workspace workspace = new Workspace("accio@gmail.com");
         System.out.println("Inbox capacity is " + workspace.getInboxCapacity() + " in workspace.");
 
-        workspace.addMeeting(new Meeting(LocalTime.parse("17:40"), LocalTime.parse("18:40")));
-        workspace.addMeeting(new Meeting(LocalTime.parse("13:30"), LocalTime.parse("18:00")));
-        workspace.addMeeting(new Meeting(LocalTime.parse("18:20"), LocalTime.parse("19:10")));
-        workspace.addMeeting(new Meeting(LocalTime.parse("19:50"), LocalTime.parse("21:05")));
+        workspace.addMeeting(new Meeting(LocalTime.parse("05:40"), LocalTime.parse("06:40")));
+        workspace.addMeeting(new Meeting(LocalTime.parse("01:30"), LocalTime.parse("06:00")));
+        workspace.addMeeting(new Meeting(LocalTime.parse("06:20"), LocalTime.parse("07:10")));
+        workspace.addMeeting(new Meeting(LocalTime.parse("07:50"), LocalTime.parse("09:05")));
         System.out.println("Maximum meetings you can attend in a day is " + workspace.findMaxMeetings());
     }
 }
