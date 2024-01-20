@@ -30,7 +30,7 @@ public class Email {
             password = newPassword;
             //System.out.println("Password changed successfully.");
         }
-           // System.out.println("Password change failed: New password does not meet requirements.");
+        return;
 
     }
     private boolean isValidPassword(String newPassword) {
